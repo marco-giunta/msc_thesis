@@ -1,5 +1,5 @@
-# Marco Giunta's MSc thesis
- Thesis and presentation sources for MSc in Physics of Data @ UniPD
+# MSc thesis
+ Thesis and presentation sources for MSc in Physics of Data @ UniPD by Marco Giunta
 
 Up-to-date files on overleaf:
 * [MSc Thesis](https://www.overleaf.com/read/wpkbfsqdqcwp "MSc thesis on overleaf")
