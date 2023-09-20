@@ -1,4 +1,4 @@
-# MSc thesis
+# Marco Giunta's MSc thesis
  Thesis and presentation sources for MSc in Physics of Data @ UniPD
 
 Up-to-date files on overleaf:
@@ -16,8 +16,7 @@ compute - requiring the use of specialized solvers. Despite the effort needed to
 obtain individual function values many likelihoods of cosmological relevance
 frequently turn out to be smooth, stable functions of their model parameters;
 this has led to many attempts to exploit these remarkable mathematical properties in order to skip the expensive calculations. Several software frameworks
-exist to allow one to approximate these functions, relying on a myriad of models, ranging from polynomial interpolation to Gaussian Processes to neural net-
-works; yet these tools are often limited in scope, requiring the user to either
+exist to allow one to approximate these functions, relying on a myriad of models, ranging from polynomial interpolation to Gaussian Processes to neural networks; yet these tools are often limited in scope, requiring the user to either
 stick to provenly effective use-cases or retrain the model from scratch - thus
 making the process of adapting likelihood emulation to new scenarios/datasets
 needlessly time consuming. In this work we present COSMOLIME (Cosmological LIkelihood Machine learning Emulator), a model-agnostic, self-training, machine learning-based framework to emulate arbitrary likelihood functions in a
