@@ -1,9 +1,17 @@
 # MSc thesis
  Thesis and presentation sources for MSc in Physics of Data @ UniPD by Marco Giunta
 
-Up-to-date files on overleaf:
-* [MSc Thesis](https://www.overleaf.com/read/wpkbfsqdqcwp "MSc thesis on overleaf")
-* [MSc Presentation](https://www.overleaf.com/read/hqfcktymfvtr "MSc presentation on overleaf")
+PDF Files:
+* [MSc Thesis](../msc_thesis_Marco_Giunta "MSc thesis PDF")
+* [MSc Presentation](../msc_presentation_Marco_Giunta "MSc presentation PDF")
+
+Source codes on Github:
+* [MSc Thesis](../thesis_source "MSc thesis source on github")
+* [MSc Presentation](../presentation_source "MSc presentation source on github")
+
+Up-to-date source codes/PDFs on overleaf:
+* [MSc Thesis](https://www.overleaf.com/read/wpkbfsqdqcwp "MSc thesis source on overleaf")
+* [MSc Presentation](https://www.overleaf.com/read/hqfcktymfvtr "MSc presentation source on overleaf")
 
 ## Title
 Emulating Cosmological Likelihoods with Machine Learning
