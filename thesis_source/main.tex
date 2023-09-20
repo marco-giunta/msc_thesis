@@ -1,0 +1,91 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\PassOptionsToPackage{svgnames}{xcolor} % https://tex.stackexchange.com/questions/653681/how-to-use-xcolor-color-names-in-tikzpicture-style deve essere messo prima di \documentclass{}
+% Load Thesis Class
+\documentclass{PODThesis}
+
+\title{Emulating Cosmological Likelihoods with Machine Learning}
+
+\author{Marco Giunta}
+\studentId{2025169}
+
+% Advisor
+\advisor{Prof. Michele Liguori}
+
+% If you are co-advised
+\coadvisor{Prof. Marco Raveri}
+\coadvisorsUniversity{University of Genova}
+
+\university{University of Padova}
+\mastername{Physics of Data}
+\academicYear{2022/2023}
+
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+    \Title{Emulating Cosmological Likelihoods with Machine Learning}
+    \Author{Marco Giunta}
+    \Language{en-EN}
+    \Keywords{Physics of Data\sep LaTeX}
+\end{filecontents*}
+
+\renewcommand{\L}{\mathcal{L}}
+\usepackage{float}
+\usepackage{comment}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\usetikzlibrary{positioning}
+%\PassOptionsToPackage{svgnames}{xcolor} % x11names
+\forestset{
+    .style={
+        for tree={
+            base=bottom,
+            child anchor=north,
+            align=center,
+            s sep+=1cm,
+    straight edge/.style={
+        edge path={\noexpand\path[\forestoption{edge},thick,-{Latex}] 
+        (!u.parent anchor) -- (.child anchor);}
+    },
+    if n children={0}
+        {tier=word, draw, thick, rectangle}
+        {draw, diamond, thick, aspect=2},
+    if n=1{%
+        edge path={\noexpand\path[\forestoption{edge},thick,-{Latex}] 
+        (!u.parent anchor) -| (.child anchor) node[pos=.2, above] {Y};}
+        }{
+        edge path={\noexpand\path[\forestoption{edge},thick,-{Latex}] 
+        (!u.parent anchor) -| (.child anchor) node[pos=.2, above] {N};}
+        }
+        }
+    }
+}
+
+%\newcommand{\cosmolime}{\textsc{CosmoLIME}} % Nota lo spazio! per qualche motivo lo spazio è necessario... usando direttamente \textsc(CosmoLIME) non ci sono problemi, invece con \cosmolime lo spazio serve
+
+% Document
+
+\begin{document}
+    % The front matter (Cover, ToC, Abstract, etc...)
+    \frontmatter
+
+    % The main content
+    \mainmatter
+    
+    %\include{chapters/01_introduction}
+    %\include{chapters/02_stateofart}
+    %\include{chapters/03_background}
+    %\include{chapters/04_analysis}
+    %\include{chapters/99_conclusions}
+
+    \include{chapters/1_introduction}
+    \include{chapters/2_cosmology}
+    \include{chapters/3_regression}
+    \include{chapters/4_cosmolime}
+    \include{chapters/5_applications}
+    \include{chapters/6_conclusions}
+    \include{chapters/7_appendix}
+    
+    % Bibliography, appendix, acknowledges, etc...
+    \backmatter
+\end{document}

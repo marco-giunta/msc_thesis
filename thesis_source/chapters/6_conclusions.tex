@@ -1,0 +1,36 @@
+\chapter{Conclusions and Future Works}
+\begin{comment}
+funzioni mancanti tipo test statistici generali ad es contour calcolati automaticamente; vedi lista su keep
+
+Esempi più complicati, ad es renderlo competitivo con cosmopower et similia sfidandoli sullo stesso dataset
+
+sfida principale provare a rifare da zero in modo automatizzato ad esempio cosmopower; lo scopo di questo nuovo paradigma, di questo nuovo approccio all'emulazione è di renderla più accessibile in quanto fai da te, e dimostrare che questa cosa sia fattibile e funzioni in contesti non banali è la vera sfida di cosmolime
+
+nel futuro pubblicarlo? non so se si possa menzionare
+
+completare la parallelizzazione distribuendo i modelli su più processi/pc? Può tornare utile perché come abbiamo visto nell'esempio delle supernove con RF anche in casi di requisiti non particolarmente assurdi (1000 output) aumentare la complessità del modello può aumentare esponenzialmente le risorse necessarie
+
+RICORDATI DI FARE I PLOT TIKZ NECESSARI IN GIRO PER IL PAPER E MAGARI DI AGGIUNGERE SOMMARI PER CODICI E FIGURE! 
+mettere qualche pagebreak in corrispondenza di codici o tabelle? Ma solo nella versione finale
+\end{comment}
+
+\section{Thesis Summary}
+In this work we introduced \textsc{CosmoLIME}, the \emph{Cosmological Likelihood Machine Learning Emulator}, a model-agnostic, self-training, machine learning-based framework to emulate arbitrary likelihood functions in a fully automated way. By using \textsc{CosmoLIME} researchers can design and implement custom emulators, tailored to their specific needs, instead of relying on prebuilt ones that may not satisfy the needed requirements.
+
+We discussed the general idea behind emulation in cosmology: emulators are simply machine learning models that can accelerate inference pipelines by approximating the output of known but expensive likelihood functions, usually computed using complex solvers. We observed that prebuilt emulators can be useful, but also fail to meet the user's required standard, but at the same time that training and testing a new emulator may take more time than would be earned by avoiding the expensive likelihood evaluations. This is the problem \textsc{CosmoLIME} seeks to solve: by automating the emulator-building process as much as possible it becomes feasible to have a software framework that saves both human and computer time.
+
+We reviewed some cosmological examples of exactly how an emulator can replace a cosmological likelihood, with a special focus on the CMB (cosmic microwave background) temperature likelihood; in particular we showed that an emulator targeting the likelihood's \emph{power spectrum} can equivalently replace the same likelihood, while addressing the simpler problem of approximating a \emph{function} instead of a \emph{distribution}.
+
+This led us to the discussion of the basics behind \emph{regression}, so that we could review all the most common tools that may be used to solve the problem of learning e.g. power spectra.
+
+Armed with this knowledge we finally introduced the inner workings of \textsc{CosmoLIME}, with particular focus on explaining how the user can use it to automatically obtain an emulator satisfying their wishes.
+
+Finally we showcased some simple toy examples about supernovae data and dark energy, to gain a better understanding of how \textsc{CosmoLIME} can aid an already established inference pipeline in practice.
+
+\section{Future Challenges}
+Although \textsc{CosmoLIME} is already a working framework there is still quite a bit of work to be done before it becomes publication-ready.
+\begin{itemize}
+    \item More features should be added in order to meet the demands of scientists working at the highest levels of cosmological research. For example some more automated statistical tests are needed; as discussed several times the common machine learning accuracy metrics already used by \textsc{CosmoLIME} can sometimes be deceiving, in the sense that an apparently good model leads to e.g. a biased posterior estimate in the final inference pipeline. To avoid this more principled, statistically sound metrics could be implemented inside the main \textsc{CosmoLIME} algorithm; in this way it would be able to more accurately judge the model's performance. This is a crucial point, as one of the main limitations of \textsc{CosmoLIME} is that it sometimes becomes overconfident due to not always accurate metrics - which may lead to e.g. a premature stop of the optimization algorithm, when in reality the model is not ready.
+    \item Another type of feature that would make \textsc{CosmoLIME} more enticing for potential users is complete support for parallelization. The current version of \textsc{CosmoLIME} can generate data in parallel, but can only train different models sequentially; this intentional design choice is to avoid failures due to running out of computational resources. By supporting powerful parallelization frameworks like \texttt{MPI} \textsc{CosmoLIME} could be distributed over multiple computers; this would allow for a true parallelization even without a significant rewriting of the current codebase, therefore yielding potentially massive speedups.
+    \item The most important thing \textsc{CosmoLIME} need is a true challenge; indeed up to now it has only been tested on toy examples, like the ones seen in this work. A great starting point would be to face an adversary as powerful as e.g. \textsc{CosmoPower}; by showing that a research-ready emulator can be comfortably built with minimum effort \textsc{CosmoLIME}'s true utility would finally become evident. Indeed if we could show that, using the same dataset used to train \textsc{CosmoPower}, \textsc{CosmoLIME} was able to automatically implement an emulator of the same quality we would be able to show how \textsc{CosmoLIME} can substantially aid scientific research. Proving that the new paradigm on which \textsc{CosmoLIME} is based (i.e. simplifying the access to custom emulators using an automated DIY approach) is possible is the most crucial piece \textsc{CosmoLIME} is missing, the pursuit of which is for now best left to future endeavours.
+\end{itemize}

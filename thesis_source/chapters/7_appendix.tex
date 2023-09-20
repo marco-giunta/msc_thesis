@@ -1,0 +1,24 @@
+\appendix
+\chapter{Further Code Examples}\label{chp:code_snippets_appendix}
+\section{\texttt{camb} Data Generation Code}
+All the codes in this section use \texttt{camb} to obtain theoretical predictions about cosmological observables given a certain choice of cosmological parameters; in particular the parameters of choice are sampled uniformly from a predefined internval, then fed to \texttt{camb}. 
+These \texttt{camb}-based codes were used to produce the datasets used in sections \ref{sec:predicting_supernovae_distances}, \ref{sec:predicting_derived_parameters} and \ref{sec:predicting_background_parameters}, either by sampling a fixed dataset using them or by wrapping them to create a \texttt{generator}-compatible \texttt{python} function.
+
+All the codes in this section were kindly provided by prof. M. Raveri, who I thank profusely - not just for the \texttt{camb} codes but because this work would never exist without him.
+
+\subsection{Supernovae Luminosity Distances Example}
+\lstinputlisting[language=Python, label={code:SN_camb}, caption={Code to predict supernovae luminosity distance as a function of redshift $z$, for a given choice of the parameter values of a simple cosmology.}]{code/generate_SN.py}
+
+\subsection{Derived Parameters Example}
+\lstinputlisting[language=Python, label={code:derived_camb}, caption={Code to predict derived parameters for a given choice of the parameter values of a simple cosmology.}]{code/generate_derived.py}
+
+\subsection{Background Parameters Example}
+\lstinputlisting[language=Python, label={code:background_camb}, caption={Code to predict background parameters (derived parameters, and supernovae angular and luminosity distances as functions of redshift $z$), for a given choice of the parameter values of a simple cosmology. This example has a bad choice of the cosmological parameters, which causes many \texttt{NaN}s to appear in the output (notice the \texttt{try-except} block towards the ends that replace \texttt{camb} errors with \texttt{NaN}s in the output). The complete output contains the same observables computed by the two previous codes (derived parameters and luminosity distances), but this time they are a) filled with \texttt{NaN}s due to this bad parametrization, and b) joined by a new observable, i.e. angular distances. For this reason this is a \emph{multi-component code}, in the sense that we can create multiple \texttt{optimizer}/\texttt{component} instances for a single \texttt{generator} one.}]{code/generate_background.py}
+
+
+\section{Dark Energy Example Code}\label{sec:dark_energy_codes}
+The code in this section has been adapted from an example by prof. M. Raveri; I thank him once again for his invaluable help.
+\lstinputlisting[language=Python, caption={The code used to perform all the inference steps in the dark energy example.}]{code/inference.py}
+
+\section{\emph{CosmoLIME} input arguments}
+\lstinputlisting[language=Python, label={code:cosmolime_args_pseudocode}, caption={\textsc{CosmoLIME}'s required input arguments, written in a \texttt{python}-inspired pseudocode. Each argument's meaning is self-explanatory. Notice that the user does not have to remember this long list or check the documentation every time; \textsc{CosmoLIME} contains a small utility function whose output is the above pseudocode string. In particular this long string can be just printed in the terminal (e.g. to refresh the user's own memory) or saved to file (e.g. to allow the user to simply modify this file filling in the missing information, instead of having to start everything from scratch). A detailed description of what each argument does can be found in \textsc{CosmoLIME}'s example notebooks.}]{code/cosmolime_args_pseudocode.py}
