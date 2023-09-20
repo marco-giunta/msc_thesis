@@ -2,12 +2,12 @@
  Thesis and presentation sources for MSc in Physics of Data @ UniPD by Marco Giunta
 
 PDF Files:
-* [MSc Thesis](../msc_thesis_Marco_Giunta "MSc thesis PDF")
-* [MSc Presentation](../msc_presentation_Marco_Giunta "MSc presentation PDF")
+* [MSc Thesis](../main/msc_thesis_Marco_Giunta "MSc thesis PDF")
+* [MSc Presentation](../main/msc_presentation_Marco_Giunta "MSc presentation PDF")
 
 Source codes on Github:
-* [MSc Thesis](../thesis_source "MSc thesis source on github")
-* [MSc Presentation](../presentation_source "MSc presentation source on github")
+* [MSc Thesis](../main/thesis_source "MSc thesis source on github")
+* [MSc Presentation](../main/presentation_source "MSc presentation source on github")
 
 Up-to-date source codes/PDFs on overleaf:
 * [MSc Thesis](https://www.overleaf.com/read/wpkbfsqdqcwp "MSc thesis source on overleaf")
