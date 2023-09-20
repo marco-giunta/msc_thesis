@@ -1,5 +1,5 @@
 # MSc thesis
- Thesis and presentation sources for MSc in Physics of Data @ UniPD by Marco Giunta
+ Thesis and presentation sources and PDFs for MSc in Physics of Data @ UniPD by Marco Giunta
 
 PDF Files:
 * [MSc Thesis](../main/msc_thesis_Marco_Giunta.pdf "MSc thesis PDF")
